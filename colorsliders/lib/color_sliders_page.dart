@@ -24,16 +24,31 @@ class _ColorSlidersPageState extends State<ColorSlidersPage> {
             label: "Red",
             value: redValue,
             color: Colors.red,
+            onChangeCallback: (newRedValue) {
+              setState(() {
+                redValue = newRedValue;
+              });
+            },
           ),
           ColorSlider(
             label: "Green",
             value: greenValue,
             color: Colors.green,
+            onChangeCallback: (newGreenValue) {
+              setState(() {
+                greenValue = newGreenValue;
+              });
+            },
           ),
           ColorSlider(
             label: "Blue",
             value: blueValue,
             color: Colors.blue,
+            onChangeCallback: (newBlueValue) {
+              setState(() {
+                blueValue = newBlueValue;
+              });
+            },
           ),
         ],
       ),
