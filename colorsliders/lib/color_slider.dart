@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class ColorSlider extends StatelessWidget {
   final String label;
-  final double value;
+  final int value;
   final Color color;
   final Function(double) onChangeCallback;
 
@@ -24,14 +24,17 @@ class ColorSlider extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(label),
-              Text(value.toStringAsFixed(3)),
+              Text(value.toString()),
             ],
           ),
         ),
         Slider(
           activeColor: color,
-          value: value,
+          value: value.toDouble(),
           onChanged: onChangeCallback,
+          max: 255,
+          min: 0,
+          divisions: 256,
         ),
       ],
     );
