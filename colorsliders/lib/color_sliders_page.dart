@@ -9,7 +9,7 @@ class ColorSlidersPage extends StatefulWidget {
 }
 
 class _ColorSlidersPageState extends State<ColorSlidersPage> {
-  double redValue = 0.5, greenValue = 0.0, blueValue = 0.0;
+  int redValue = 128, greenValue = 0, blueValue = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -50,6 +50,17 @@ class _ColorSlidersPageState extends State<ColorSlidersPage> {
               });
             },
           ),
+          Expanded(
+            child: Container(
+              margin: const EdgeInsets.all(20.0),
+              color: Color.fromRGBO(
+                redValue,
+                greenValue,
+                blueValue,
+                1.0,
+              ),
+            ),
+          )
         ],
       ),
     );
